@@ -1,0 +1,58 @@
+<div class="container activity  py-2" id="activity" *ngIf="transService.transactions">
+    <div class="bg-white p-5 rounded shadow">
+
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+                <input type="search" [(ngModel)]="searchText" placeholder="What're you searching for?"
+                    aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                <div class="input-group-append">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i
+                            class="fa fa-search"></i></button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">By amount</a>
+                        <a class="dropdown-item" href="#">By Transaction</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="font-weight-light text-center text-muted py-3">Here is your activity</h2>
+
+        <div class="row" *ngFor="let transaction of transService.transactions; let i = index">
+
+            <div class="col-auto text-center flex-column d-none d-sm-flex">
+                <div class="row h-50">
+                    <div class="col border-right">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <h5 class="m-2">
+                    <span class="badge badge-pill bg-primary">&nbsp;</span>
+                </h5>
+                <div class="row h-50">
+                    <div class="col border-right">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="col py-2">
+                <div class="card border-primary shadow">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">Transaction #{{transaction.tid}}</h4>
+                        <p class="card-text">Paid For : {{transaction.paidForUserName}}</p>
+                        <button class="btn btn-sm btn-outline-secondary" type="button" attr.data-target="#t2_details{{i}}"
+                            data-toggle="collapse">Show Details ▼</button>
+                        <div class="collapse border" id="t2_details{{i}}">
+                            <div class="p-2 text-monospace">
+                                <div>Purpose: {{transaction.purpose.pName}}</div>
+                                <div>Paid For: {{transaction.user.name}}</div>
+                                <div>amount : {{transaction.amount}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

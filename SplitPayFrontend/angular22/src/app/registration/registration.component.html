@@ -1,0 +1,62 @@
+<div class="container col-7 mt-5">
+
+  <div class="card card-shadow">
+
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <img class="rounded-circle icon-shadow" src="\assets\image_avatar.jpg" alt="Avatar" height="130" width="130">
+      </div>
+
+    </div>
+
+    <form #groupForm="ngForm" (ngSubmit)="groupSubmit(groupForm)">
+
+      <div class="form-group mr-4 ml-4">
+        <label class="h6">GroupName</label>
+        <input type="text" class="form-control" placeholder="Enter Group Name" name="groupName" #groupName="ngModel"
+          [(ngModel)]="group.groupName" required>
+        <div class="alert alert-danger" *ngIf="groupName.dirty && groupName.invalid">
+          <strong>Oh snap!</strong>
+          Group Name can't be empty !
+        </div>
+      </div>
+   
+      <div class="d-flex justify-content-center mb-3">
+        <button class="btn btn-outline-info" type="submit"
+          [disabled]="groupForm.pristine || groupForm.invalid">Submit</button>
+      </div>
+    </form>
+
+    <div class="alert alert-success mt-3 mx-3" *ngIf="successFlag">
+      <i class="fas fa-check mr-2"></i>
+      Group created successfully !
+    </div>
+
+    <div class="alert alert-danger mt-3" *ngIf="errorFlag">
+      <i class="fas fa-exclamation-circle fa-lg mr-3"></i>
+      <strong>Oops!</strong> There was an error while creating your group. Please try again !
+    </div>
+
+  </div>
+  <footer>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 680 91"
+      class="w-full ">
+      <path fill="#ACE4D6" d="M349 76.499L286 113V40z"></path>
+      <path fill="#0C3C32" d="M480 74.5L446 94V55z"></path>
+      <path fill="#1CC29F" d="M223 76.5l63 36.5V40zm182 1.999L446 102V55z"></path>
+      <path fill="#137863" d="M169 48v82l71-41z"></path>
+      <path fill="#1CC29F" d="M121 75.499L169 103V48z"></path>
+      <path fill="#373B3F" d="M456 101h-96V46z"></path>
+      <path fill="#52595F" d="M360 46v55h-96z"></path>
+      <path fill="#A473DB" d="M436 93h63V57z"></path>
+      <path fill="#D0B3EB" d="M499 57v36h63z"></path>
+      <path fill="#0C3C32" d="M491 93h84.18V44z"></path>
+      <path fill="#1CC29F" d="M575.18 93h84.179l-84.18-49z"></path>
+      <path fill="#FF2900" d="M601 94h48V66z"></path>
+      <path fill="#FF692C" d="M649 66v28h48z"></path>
+      <path fill="#FF815C" d="M170.385 93h76V49z"></path>
+      <path fill="#FF2900" d="M246.385 49v44h76z"></path>
+      <path fill="#373B3F" d="M166 93H70V38z"></path>
+      <path fill="#52595F" d="M70 38v55h-96z"></path>
+    </svg>
+  </footer>
