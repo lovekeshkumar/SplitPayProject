@@ -1,0 +1,12 @@
+.navbar {
+    background-color: transaparent;
+    color: white;
+    padding: 15px;
+
+}
+.nav-link{
+    color: #fbfdff;
+    text-decoration: none;
+    background-color: transparent;
+}
+

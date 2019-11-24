@@ -1,0 +1,37 @@
+<div class="container col-7 mt-5">
+  <div class="card card-shadow">
+    <div class="card-body pb-0">
+     <h5 class="card-title text-center mt-3 mb-4">Add your Transaction</h5>
+    <div class="form-group">
+      <select class="form-control" required>
+        <option value="">Please Choose your Purpose</option>
+        <option value="1">Breakfast</option>
+        <option value="2">Lunch</option>
+        <option value="1">Dinner</option>
+        <option value="2">Party</option>
+        <option value="1">Trip</option>
+        <option value="2">Rent</option>   
+         <option value="2">Any other</option>   
+      </select>
+      </div>
+       </div>
+   
+    <div class="card-body pb-0 ">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="paid for ">
+      </div>
+    </div>
+    <div class="card-body pb-0"> 
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="please enter name of payer">
+      </div>
+    </div>
+    <div class="card-body">
+      <input type="text" placeholder="please enter amount" class="input-group-text" class="form-control"
+        aria-label="Rupees amount (with dot and two decimal places)">
+      <div class="input-group-append justify-content-center mb-3">
+        <button type="button" class="btn  justify-content-center mb-3 btn-outline-info mt-3" routerLink='/split' data-toggle="modal"
+          data-target="#split">Split</button></div>
+    </div>
+  </div>
+</div>

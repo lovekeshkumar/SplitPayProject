@@ -1,0 +1,41 @@
+.my-bg  
+{
+background: #E8CBC0;
+background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
+background: linear-gradient(to right, #E8CBC0, #636FA4);
+min-height: 100vh;
+} 
+.btn{
+    font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+  width: 20%;
+}
+.card{
+border: 0;
+border-radius: 1rem;
+}
+.card-body {
+    padding: 2rem;
+  }
+  
+  .form-control {
+   width: 60ex;
+   
+   margin-left: 150px;
+
+    margin-bottom: 1rem;
+    height: auto;
+    border-radius: 2rem;
+    
+  }
+  .form-group input
+  {
+    height: auto;
+    font-size: 100%;
+    border-radius: 2rem;
+    
+  }
