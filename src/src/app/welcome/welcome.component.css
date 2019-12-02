@@ -1,0 +1,166 @@
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+html{
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  height: calc(200vh - 10em);
+  padding: 4em;
+  color: rgba(255,255,255,.75);
+  font-family: 'Anonymous Pro', monospace;  
+  
+}
+display-4{
+    font-family: 'Anonymous Pro', monospace;  
+}
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 30em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 30em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+
+  /* Timeline holder */
+  ul.timeline {
+      list-style-type: none;
+      position: relative;
+      padding-left: 1.5rem;
+  }
+  
+   /* Timeline vertical line */
+  ul.timeline:before {
+      content: ' ';
+      background: #fff;
+      display: inline-block;
+      position: absolute;
+      left: 16px;
+      width: 4px;
+      height: 100%;
+      z-index: 400;
+      border-radius: 1rem;
+  }
+  
+  li.timeline-item {
+      margin: 20px 0;
+  }
+  
+  /* Timeline item arrow */
+  .timeline-arrow {
+      border-top: 0.5rem solid transparent;
+      border-right: 0.5rem solid #fff;
+      border-bottom: 0.5rem solid transparent;
+      display: block;
+      position: absolute;
+      left: 2rem;
+  }
+  
+  /* Timeline item circle marker */
+  li.timeline-item::before {
+      content: ' ';
+      background: #ddd;
+      display: inline-block;
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      left: 11px;
+      width: 14px;
+      height: 14px;
+      z-index: 400;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  .hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+  
+  
+  .text-gray {
+      color: #999;
+  }
+   
+      .card.hover-zoomin {
+        display: block;
+        position: relative;
+        overflow: hidden;
+      }
+      h1{
+        font-family: 'Roboto', sans-serif;
+        font-size:5em; 
+        text-align:center;
+        font-weight:50;
+        font-synthesis: 0 4px 14px 0 rgba(0, 0, 0, 0.3), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.about{
+	cursor: pointer;
+
+	color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.about h2 {
+	opacity: .8;
+}
+.about img {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	margin:auto;
+	border-radius:50%;  
+	font-size: 40px;
+	color: #FFFFFF;
+
+
+	
+	webkit-transition:all .5s ease;
+ 	moz-transition:all .5s ease;
+ 	os-transition:all .5s ease;
+ 	transition:all .5s ease;
+
+}
+.about-item:hover img{
+	opacity: 1;	
+	border: 2px solid #CC0039;
+	font-size: 42px;
+	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
+	-o-transform: scale(1.1,1.1) rotate(360deg) ;
+	transform: scale(1.1,1.1) rotate(360deg) ;
+}
+.about-item:hover h2{
+	opacity: 1;
+	-webkit-transform: scale(1.1,1.1)  ;
+	-moz-transform: scale(1.1,1.1)  ;
+	-o-transform: scale(1.1,1.1)  ;
+	transform: scale(1.1,1.1) ;
+}
+  

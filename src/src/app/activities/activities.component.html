@@ -1,0 +1,77 @@
+<div class="container activity  py-2" id="activity" *ngIf="transService.myTransactions">
+    <div class="bg-white p-5 rounded shadow">
+
+        <div *ngIf="type === 'payments'">
+
+            <h2 class="font-weight-light text-center text-muted py-3">Here are your payments</h2>
+
+            <div class="row" *ngFor="let transaction of transService.myTransactions; let i = index">
+
+                <div class="col-auto text-center flex-column d-none d-sm-flex">
+                    <div class="row h-50">
+                        <div class="col border-right">&nbsp;</div>
+                        <div class="col">&nbsp;</div>
+                    </div>
+                    <h5 class="m-2">
+                        <span class="badge badge-pill bg-primary">&nbsp;</span>
+                    </h5>
+                    <div class="row h-50">
+                        <div class="col border-right">&nbsp;</div>
+                        <div class="col">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class="col py-2">
+                    <div class="card border-primary shadow">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">Transaction #{{transaction.tid}}</h4>
+                            <button class="btn btn-sm btn-outline-secondary" type="button"
+                                attr.data-target="#t2_details{{i}}" data-toggle="collapse">Show Details ▼</button>
+                            <div class="collapse border" id="t2_details{{i}}">
+                                <div class="p-2 text-monospace">
+                                    <div>Purpose: {{transaction.purpose}}</div>
+                                    <div>Paid For: {{transaction.paidfor.name}}</div>
+                                    <div>Amount : {{transaction.amount}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="type === 'debts'">
+            <h2 class="font-weight-light text-center text-muted py-3">Here are your debts</h2>
+            <div class="row" *ngFor="let transaction of transService.myDebts; let i = index">
+                <div class="col-auto text-center flex-column d-none d-sm-flex">
+                    <div class="row h-50">
+                        <div class="col border-right">&nbsp;</div>
+                        <div class="col">&nbsp;</div>
+                    </div>
+                    <h5 class="m-2">
+                        <span class="badge badge-pill bg-primary">&nbsp;</span>
+                    </h5>
+                    <div class="row h-50">
+                        <div class="col border-right">&nbsp;</div>
+                        <div class="col">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class="col py-2">
+                    <div class="card border-primary shadow">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">Transaction #{{transaction.tid}}</h4>
+                            <button class="btn btn-sm btn-outline-secondary" type="button"
+                                attr.data-target="#t2_details{{i}}" data-toggle="collapse">Show Details ▼</button>
+                            <div class="collapse border" id="t2_details{{i}}">
+                                <div class="p-2 text-monospace">
+                                    <div>Purpose: {{transaction.purpose}}</div>
+                                    <div>Paid By: {{transaction.paidby.name}}</div>
+                                    <div>Amount : {{transaction.amount}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

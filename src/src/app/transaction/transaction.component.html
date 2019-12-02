@@ -1,0 +1,41 @@
+<div class="container col-7 mt-5 animated bounceInUp delay-1s">
+  <div class="card card-shadow">
+    <div class="card-body pb-0 ">
+      <h5 class="card-title text-center mt-3 mb-4">Add your Transaction</h5>
+
+      <form #addForm="ngForm" (ngSubmit)="addTransaction(addForm)">
+        <div class="form-group">
+            <label class="h6">Paid For :</label>
+          <select class="form-control" name="ffk" #ffk="ngModel" [(ngModel)]="transaction.ffk" required>
+            <option [value]="user.id" *ngFor="let user of authService.allUsers">{{user.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label class="h6">Purpose :</label>
+          <input type="text" class="form-control" placeholder="please enter purpose" name="purpose" #purpose="ngModel"
+            [(ngModel)]="transaction.purpose">
+        </div>
+
+        <div class="form-group">
+            <label class="h6">Amount :</label>
+          <input type="text" placeholder="please enter amount" class="input-group-text" class="form-control"
+            aria-label="Rupees amount (with dot and two decimal places)" name="amount" #amount="ngModel"
+            [(ngModel)]="transaction.amount">
+        </div>
+
+        <div class="d-flex justify-content-center mb-3">
+          <button type="submit" class="btn  justify-content-center mb-3 btn-outline-info mt-3" data-toggle="modal">
+            SUBMIT
+          </button>
+        </div>
+
+      </form>
+
+      <div class="alert alert-success" role="alert" *ngIf="successFlag">
+        Transaction added successfully !
+      </div>
+
+    </div>
+  </div>
+</div>
